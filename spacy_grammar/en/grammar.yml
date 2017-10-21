@@ -1,0 +1,10 @@
+typos:
+  as_follow_as_follows:
+    description: 
+    patterns: 
+      # TODO: alternatively, we can separate wrt tokens
+      - as follow
+    corrections:
+      - do you mean "as follows"?
+    examples: 
+      - We can elaborate this distinction as follow.

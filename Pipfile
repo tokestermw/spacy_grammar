@@ -1,0 +1,22 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+spacy-nightly = "==2.0.0a17"
+ipython = "*"
+pyyaml = "*"
+spacymoji = "*"
+
+
+[dev-packages]
+
+
+
+[requires]
+
+python_version = "3.6"
