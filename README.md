@@ -20,6 +20,16 @@ A lot of thanks to [spacymoji](https://github.com/ines/spacymoji) and
 
 ## Install
 
+This package uses Python 3.6.
+
+```
+python3.6 -m venv .
+source bin/activate
+pip install -r requirements.txt
+```
+
+
+
 The module uses the [`pipenv`](https://github.com/kennethreitz/pipenv) package
 to handle dependencies. Once you install `pipenv`, you go to the root directory
 and run:
