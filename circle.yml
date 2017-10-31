@@ -4,7 +4,7 @@ general:
 dependencies:
   post:
     - pip install pipenv
-    - pipenv --three
+    - pipenv install
 
 test:
   override:
