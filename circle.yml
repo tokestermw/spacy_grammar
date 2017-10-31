@@ -4,11 +4,9 @@ general:
 machine:
   python:
     version: 3.6.3
-  python-pip:
-    version: 9.0.1
 
 dependencies:
-  pre:
+  override:
     - pip install -r requirements.txt
     - python -m spacy download en_core_web_sm
 
