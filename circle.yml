@@ -1,5 +1,11 @@
 general:
-  build_dir: build
+  build_dir: .
+
+machine:
+  python:
+    version: 3.6.3
+  python-pip:
+    version: 9.0.1
 
 dependencies:
   post:
