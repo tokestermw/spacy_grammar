@@ -8,4 +8,4 @@ dependencies:
 
 test:
   override:
-    - pipenv run spacy_grammar.grammar
+    - pipenv run python -m spacy_grammar.grammar
