@@ -1,0 +1,17 @@
+general:
+  build_dir: .
+
+machine:
+  python:
+    version: 3.6.3
+  python-pip:
+    version: 9.0.1
+
+dependencies:
+  pre:
+    - pip install -r requirements.txt
+    - python -m spacy download en_core_web_sm
+
+test:
+  override:
+    - python -m spacy_grammar.grammar
