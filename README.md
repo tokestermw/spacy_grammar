@@ -28,25 +28,6 @@ source bin/activate
 pip install -r requirements.txt
 ```
 
-
-
-The module uses the [`pipenv`](https://github.com/kennethreitz/pipenv) package
-to handle dependencies. Once you install `pipenv`, you go to the root directory
-and run:
-
-```
-pipenv install
-```
-
-and it will read the `Pipfile` to build the environment. To run the
-virtualenv, simply:
-
-```
-pipenv shell
-```
-
-Run `exit` to exit out of the environment.
-
 You will also need to install a spaCy model by:
 
 ```
