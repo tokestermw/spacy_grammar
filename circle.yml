@@ -1,0 +1,11 @@
+general:
+  build_dir: build
+
+dependencies:
+  post:
+    - pip install pipenv
+    - pipenv --three
+
+test:
+  override:
+    - pipenv run spacy_grammar.grammar
