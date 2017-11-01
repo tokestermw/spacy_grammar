@@ -76,3 +76,14 @@ CATEGORY_NAME:
       ...
 
 ```
+
+A pattern could match on a plain string or a list of token attributes.
+
+```
+# match on string
+- as follow
+# match on list of token attributes
+-
+  - LOWER: follow
+  - LOWER: follow
+```
