@@ -1,23 +1,4 @@
-from spacy.tokens import Doc, Span, Token
-from spacy.matcher import PhraseMatcher
-
-from .utils import load_grammar_file
-
-PREFIX = 'g_'
-
-
-# TODO: put into class (to keep descriptions, etc.)?
-def parse_grammar_matchers(nlp):
-    grammar_file = load_grammar_file(nlp.lang)
-    matchers = []
-    for category, rule in grammar_file.items():
-        matcher = PhraseMatcher(nlp.vocab)
-        for name, attributes in rule.items():
-            grammar_patterns = map(nlp, attributes['patterns'])
-            matcher.add(name, None, *grammar_patterns)
-            Token.set_extension(PREFIX + name, default=False)
-        matchers.append(matcher)
-    return matchers
+from .pattern import parse_grammar_matchers, PREFIX
 
 
 class Grammar(object):
@@ -40,9 +21,11 @@ class Grammar(object):
             for token in span:
                 token._.set(PREFIX + ent_name, True)
             spans.append(span)
+
         if self.merge_spans:
             for span in spans:
                 span.merge()
+
         return doc
 
 
