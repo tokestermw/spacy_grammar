@@ -1,4 +1,4 @@
-from .pattern import parse_grammar_matchers, PREFIX
+from .pattern import parse_grammar_matcher, PREFIX
 
 
 class Grammar(object):
@@ -6,13 +6,11 @@ class Grammar(object):
     def __init__(self, nlp, merge_spans=False):
 
         self.merge_spans = merge_spans
-        self.matchers = parse_grammar_matchers(nlp)
+        self.matcher = parse_grammar_matcher(nlp)
 
     def __call__(self, doc):
 
-        matches = []
-        for matcher in self.matchers:
-            matches.extend(matcher(doc))
+        matches = self.matcher(doc)
 
         spans = []  # keep spans here to merge them later
         for ent_id, start, end in matches:
