@@ -2,9 +2,13 @@ typos:
   as_follow_as_follows:
     description: 
     patterns: 
-      # TODO: alternatively, we can separate wrt tokens
+      # match directly on the string
       - as follow
+      # alternatively, you can use spaCy attributes to match on each token
+      -
+        - LOWER: as
+        - LOWER: follow
     corrections:
-      - do you mean "as follows"?
+      - Do you mean "as follows"?
     examples: 
       - We can elaborate this distinction as follow.
