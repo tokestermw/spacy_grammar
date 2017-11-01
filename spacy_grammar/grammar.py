@@ -3,7 +3,7 @@ from .pattern import parse_grammar_matcher, PREFIX
 
 class Grammar(object):
 
-    def __init__(self, nlp, merge_spans=False):
+    def __init__(self, nlp):
 
         self.merge_spans = merge_spans
         self.matcher = parse_grammar_matcher(nlp)
@@ -19,10 +19,6 @@ class Grammar(object):
             for token in span:
                 token._.set(PREFIX + ent_name, True)
             spans.append(span)
-
-        if self.merge_spans:
-            for span in spans:
-                span.merge()
 
         return doc
 
