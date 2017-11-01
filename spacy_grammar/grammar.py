@@ -5,7 +5,6 @@ class Grammar(object):
 
     def __init__(self, nlp):
 
-        self.merge_spans = merge_spans
         self.matcher = parse_grammar_matcher(nlp)
 
     def __call__(self, doc):
