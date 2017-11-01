@@ -1,3 +1,5 @@
+from itertools import chain
+
 from .pattern import parse_grammar_matcher, PREFIX
 
 
@@ -5,14 +7,16 @@ class Grammar(object):
 
     def __init__(self, nlp):
 
-        self.matcher = parse_grammar_matcher(nlp)
+        self.matcher, self.phrase_matcher = parse_grammar_matcher(nlp)
 
     def __call__(self, doc):
 
         matches = self.matcher(doc)
+        phrase_matches = self.phrase_matcher(doc)
 
-        spans = []  # keep spans here to merge them later
-        for ent_id, start, end in matches:
+        # TODO: remove duplicates
+        spans = []
+        for ent_id, start, end in chain(matches, phrase_matches):
             ent_name = doc.vocab[ent_id].text
             span = doc[start : end]
             for token in span:
