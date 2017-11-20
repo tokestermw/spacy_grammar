@@ -5,6 +5,8 @@ from .pattern import parse_grammar_matcher, PREFIX
 
 class Grammar(object):
 
+    name = 'grammar'
+
     def __init__(self, nlp):
 
         self.matcher, self.phrase_matcher = parse_grammar_matcher(nlp)
