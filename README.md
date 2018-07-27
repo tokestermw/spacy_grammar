@@ -46,9 +46,12 @@ This code checks to see if someone wrote `as follow` instead of `as follows`.
 
 ```
 import spacy
+from spacy_grammar.grammar import Grammar
+
 nlp = spacy.load('en_core_web_sm')
 grammar = Grammar(nlp)
 nlp.add_pipe(grammar)
+
 doc = nlp('We can elaborate this distinction as follow.')
 print([i._.g_as_follow_as_follows for i in doc])
 # [False, False, False, False, False, True, True, False]
